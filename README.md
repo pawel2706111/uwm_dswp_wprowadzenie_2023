@@ -2,4 +2,4 @@
 
 Imię i nazwisko: Paweł Majorowski\
 Numer indeksu: 155090\
-Numer grupy: 2\
+Numer grupy: 2
