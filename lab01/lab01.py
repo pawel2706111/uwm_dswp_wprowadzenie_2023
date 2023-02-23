@@ -41,4 +41,3 @@ for i in floaty:
 
 
 # zadanie 3
-print('\nzadanie 3')
