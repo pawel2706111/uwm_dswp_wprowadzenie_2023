@@ -4,6 +4,7 @@
 # Grupa 2
 # zadanie 1
 
+print('Zadanie 1')
 dane = input('Podaj linię danych: ')
 separator_zrodlowy = input('Podaj separator źródłowy: ')
 separator_docelowy = input('Podaj separator docelowy: ')
