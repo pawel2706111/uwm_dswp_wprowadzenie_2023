@@ -1,3 +1,9 @@
+# Wprowadzenie do języka Python
+# Paweł Majorowski
+# 155090
+# Grupa 2
+# lab 02
+#
 # zadanie 1
 print('Zadanie 1:')
 lista = list(range(1, 11))
