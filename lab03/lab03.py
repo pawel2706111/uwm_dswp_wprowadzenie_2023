@@ -2,7 +2,7 @@
 # Paweł Majorowski
 # 155090
 # Grupa 2
-# lab 02
+# lab 03
 #
 # zadanie 1
 print('Zadanie 1:')
