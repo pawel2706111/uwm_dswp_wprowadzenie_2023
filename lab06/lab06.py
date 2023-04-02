@@ -30,6 +30,23 @@ print(slownik)
 # Zadanie 5
 print('\nZadanie 5')
 
+nazwiska = ['Adamska', 'Włodarczyk', 'Włodarczyk', 'Czerwiński', 'Kołodziej', 'Szewczyk', 'Duda', 'Brzeziński', 'Wiśniewski', 'Stępień', 'Krawczyk', 'Baranowski', 'Szymański', 'Maciejewski', 'Czarnecki', 'Zawadzki', 'Kucharski', 'Kubiak', 'Zawadzki', 'Tomaszewski', 'Pietrzak', 'Zalewski', 'Michalak', 'Walczak', 'Marciniak', 'Mazur', 'Mazur', 'Szymczak', 'Dąbrowski', 'Kalinowski', 'Nowak']
+nazwiska.sort()
+indeks = None
+for i in range(0, len(nazwiska)):
+    if(nazwiska[i].upper() >= 'N'):
+        print(nazwiska[i].upper() >= 'N')
+        indeks = i
+        break
+
+with open('A-M_nazwiska.txt', 'w', encoding='utf-8') as file_reader:
+    for nazwisko in nazwiska[:indeks]:
+        file_reader.write(nazwisko+'\n')
+
+with open('N-Ż_nazwiska.txt', 'w', encoding='utf-8') as file_reader:
+        for nazwisko in nazwiska[indeks:]:
+            file_reader.write(nazwisko+'\n')
+
 # Zadanie 6
 print('\nZadanie 6')
 
