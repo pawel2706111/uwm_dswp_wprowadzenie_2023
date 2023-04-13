@@ -122,3 +122,33 @@ print('Słownik po posortowaniu według sum:')
 print(zadanie_5(slownik, sum))
 print('Słownik po posortowaniu według abs:')
 print(zadanie_5(slownik, abs))
+
+print('\nStatystki dla sprawdzenia poprawności działania zadania 5:\n')
+print(' '*5, end='')
+for i in slownik.keys():
+    print(f'|{i:^20}', end='')
+print('|')
+print(' '*5, end='')
+for i in slownik.keys():
+    print('+'+'-'*20, end='')
+print('+')
+print('min  ', end='')
+for i in slownik.values():
+    print(f'|{min(i):^20}', end='')
+print('|')
+print('max  ', end='')
+for i in slownik.values():
+    print(f'|{max(i):^20}', end='')
+print('|')
+print('sum  ', end='')
+for i in slownik.values():
+    print(f'|{sum(i):^20}', end='')
+print('|')
+print('abs  ', end='')
+for i in slownik.values():
+    print(f'|{min(map(abs, i)):^20}', end='')
+print('|')
+print(' '*5, end='')
+for i in slownik.keys():
+    print('+'+'-'*20, end='')
+print('+')
