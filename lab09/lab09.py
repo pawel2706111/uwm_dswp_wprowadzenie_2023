@@ -14,6 +14,9 @@ class Point:
     def __str__(self):
         return f'Point({self.x}, {self.y})'
     
+    def __repr__(self):
+        return f'Point({self.x}, {self.y})'
+
     def __mul__(self, skalar):
         return Point(self.x * skalar, self.y * skalar)
     
@@ -77,9 +80,7 @@ class Polygon():
         self.points.append(point)
 
     def __str__(self):
-        napis = 'Polygon' + str([str(punkt) for punkt in self.points])
-        napis = napis.replace("'", "")
-        return napis
+        return 'Polygon' + str(self.points)
     
     def __getitem__(self, items):
         try:
@@ -99,6 +100,6 @@ print(kwadrat)
 
 print('\nZadanie 7:')
 print('kwadrat[0]:', kwadrat[0])
-print('kwadrat[1::2]:', [str(punkt) for punkt in kwadrat[1::2]])
+print('kwadrat[1::2]:', kwadrat[1::2])
 print('kwadrat["xd"]: ', end='')
 kwadrat["xd"]
