@@ -10,7 +10,7 @@ from timeit import timeit
 def zadanie_1():
     setup = 'from array import array\n'
     setup += 'import random\n'
-    setup += 'lista_liczb = [random.randint(32, 126) for i in range(0, 1000000)]\n'
+    setup += 'lista_liczb = [random.randint(32, 126) for i in range(0, 100000)]\n'
     setup += 'lista_znakow = [chr(znak) for znak in lista_liczb]'
 
     tablica_int = '''tablica_int = array('i', lista_liczb)'''
@@ -25,14 +25,15 @@ def zadanie_1():
     czas_lista_liczb = timeit(lista_liczb, setup, number=100)
     czas_lista_znakow = timeit(lista_znakow, setup, number=100)
 
-    print('Int:', czas_int)
-    print('Long:', czas_long)
-    print('Char:', czas_char)
-    print('Lista_liczb:', czas_lista_liczb)
-    print('Lista znaków:', czas_lista_znakow)
+    print('Czasy (w sekundach):')
+    print('\t- Int:', czas_int)
+    print('\t- Long:', czas_long)
+    print('\t- Char:', czas_char)
+    print('\t- Lista_liczb:', czas_lista_liczb)
+    print('\t- Lista znaków:', czas_lista_znakow)
 
-#print('Zadanie 1')
-#zadanie_1()
+print('Zadanie 1')
+zadanie_1()
 
 # Zadanie 2
 import datetime
@@ -90,8 +91,8 @@ def zadanie_2():
     print(f'Odczyt tablicy do pliku jest {odczyt_ile_szybszy:.2f} raza szybszy od odczytu listy do pliku')
     print('Wnioski: Używanie tablicy jest zdecydowanie szybsze od używania list')
 
-#print('\nZadanie 2')
-#zadanie_2()
+print('\nZadanie 2')
+zadanie_2()
 
 # Zadanie 3
 
@@ -114,8 +115,8 @@ def zadanie_3():
     print(f'Append dla kolejki jest {czas_lista_append/czas_kolejka_append} raza szybszy, niż append dla listy')
     print(f'Appendleft dla kolejki jest {czas_lista_insert_zero/czas_kolejka_appendleft} raza szybszy, niż insert(0) dla listy')
 
-#print('\nZadanie 3')
-#zadanie_3()
+print('\nZadanie 3')
+zadanie_3()
 
 # Zadanie 4
 from collections import deque, namedtuple, Counter
@@ -165,8 +166,7 @@ def create_kolo_fortuny(*args):
     return deque(counter)
 
 def zadanie_6():
-    args = 'Szczęście to jedyna rzecz, która się mnoży, gdy się ją dzieli'
-    args = args.split(' ')
+    args = range(1, 11)
     kolo_fortuny = create_kolo_fortuny(*args)
     print(kolo_fortuny)
 
@@ -174,9 +174,28 @@ print('\nZadanie 6:')
 zadanie_6()
 
 # Zadanie 7
+import time
+
+def spinit(kolo_fortuny):
+    stop = kolo_fortuny[0]
+    o_ile_obracac = random.randint(0, len(kolo_fortuny))
+    czy_jeszcze_nie_zakrecono = True
+    while(kolo_fortuny[0] != stop or czy_jeszcze_nie_zakrecono):
+        czy_jeszcze_nie_zakrecono = False
+        kolo_fortuny.rotate(o_ile_obracac)
+        print(kolo_fortuny, end='')
+        time.sleep(0.5)
+        print('\r', end='')
+    print(kolo_fortuny)
 
 def zadanie_7():
-    pass
+    args = list(range(1, 10))
+    random.shuffle(args)
+    kolo_fortuny = create_kolo_fortuny(*args)
+    print('Koło fortuny przed zakręceniem:')
+    print(kolo_fortuny)
+    print('Aktualny stan koła fortuny:')
+    spinit(kolo_fortuny)
 
 print('\nZadanie 7:')
 zadanie_7()
