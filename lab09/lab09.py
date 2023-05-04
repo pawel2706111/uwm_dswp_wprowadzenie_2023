@@ -21,7 +21,7 @@ class Point:
         return Point(self.x * skalar, self.y * skalar)
     
     def __eq__(self, inny_obiekt):
-        if(type(inny_obiekt) != type(self)):
+        if(not isinstance(inny_obiekt, Point)):
             return False
         if(self.x != inny_obiekt.x):
             return False
